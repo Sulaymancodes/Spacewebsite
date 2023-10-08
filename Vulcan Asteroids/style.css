@@ -1,0 +1,216 @@
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-image: url("images/8k_stars_milky_way.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: Keeps the background fixed when scrolling */
+    background-position: center center;
+    font-family: 'Orbitron', sans-serif;
+}
+.main-container{
+    
+}
+/* Basic styling for the navbar */
+.navbar {
+    background-color: #00000000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100; 
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Styling for the logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Styling for the navigation links */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+/* Style for the navigation links */
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Show the menu toggle button on smaller screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide the navigation links by default on smaller screens */
+        flex-direction: column;
+        background-color: #c4b9b9;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    .nav-links.show {
+        display: flex; /* Show the navigation links when the menu is toggled */
+    }
+}
+h4{
+    margin: 0;
+}
+h1, h4{
+    color: white;
+}
+a:hover{
+    text-decoration: underline;
+}
+.slider-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 20vh;
+    padding: 10px;
+    width: 300px;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+}
+.slider-container h1 {
+    font-size: 24px; /* Adjust the font size as needed */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.slider{
+    padding: 20px;
+    margin: 0 0 10px 20px;
+    animation: moveUpDown 2s ease infinite alternate;
+}
+.line {
+    border: none; /* Remove the default border */
+    border-top: 1px solid #ffffff; /* Add a 1px solid horizontal line */
+    margin: 10px 0; /* Adjust margin for spacing above and below the line */
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.478), 0 0 10px 10px rgba(255, 255, 255, 0.19);
+}
+.planets-img{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.478), 0 0 10px 10px rgba(255, 255, 255, 0.19);
+    animation: rotate 5s linear infinite; /* Rotate continuously */
+}
+.info-slider{
+    border: 2px solid whitesmoke;
+    padding: 5px 10px;
+    border-radius: 5px;
+    animation: moveUpDown 2s ease infinite alternate;
+}
+.dest-text{
+    text-align: center;
+    animation: moveUpDown 2s ease infinite alternate;
+}
+.booking-btn, .signup-btn{
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: 2px solid whitesmoke;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+}
+.booking-btn:hover{
+    color: #333;
+    background-color: azure;
+}
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(10px); /* Start position */
+    }
+    100% {
+        transform: translateY(0px); /* End position (adjust as needed) */
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg); /* Start with no rotation */
+    }
+    100% {
+        transform: rotate(360deg); /* Rotate 360 degrees (one full circle) */
+    }
+}
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Show the menu toggle icon on small screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide the navigation links by default on small screens */
+        flex-direction: column;
+        border: 2px solid whitesmoke;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #00000000;
+        padding: 10px;
+    }
+
+    .nav-links.show {
+        display: flex; /* Show the navigation links when menu is open */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-opened .menu-toggle::before {
+        content: '\2715'; /* Change the menu icon to a close icon (✕) when menu is open */
+    }
+}
